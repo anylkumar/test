@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Candidates</title>
+</head>
+
+<body>
+    <h1>List of All Candidates</h1>
+    <ul>
+        <% for(let c of candidates) {%>
+            <li>
+                <a href="candidates/<%= c._id %>">
+                    <%= c.username %>
+                </a>
+            </li>
+            <% } %>
+    </ul>
+
+    <a href="/candidates/new">Add New Candidate</a><br>
+    <a href="/candidates/highestScorers">List of Highest Scorers</a><br>
+    <a href="/candidates/avgScore">List of Avg Score per Round</a>
+
+</body>
+
+</html>

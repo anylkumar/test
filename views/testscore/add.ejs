@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Test Scores</title>
+</head>
+
+<body>
+    <h1>
+        Name : <%= candidate.username %>
+    </h1>
+    <h2>Add Test Scores</h2>
+    <form action="/candidates/<%= candidate._id %>/testscores" method="POST">
+        <label for="test_score1">Test Score 1</label>
+        <input type="number" name="test_score1" id="test_score1" min="0" max="10">
+        <label for="test_score2">Test Score 2</label>
+        <input type="number" name="test_score2" id="test_score2" min="0" max="10">
+        <label for="test_score3">Test Score 3</label>
+        <input type="number" name="test_score3" id="test_score3" min="0" max="10">
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>

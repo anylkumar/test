@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avg Scores per Round</title>
+</head>
+
+<body>
+    <h1>Average Scores per Round</h1>
+    <ul>
+        <% sum1=0 %>
+            <% sum2=0 %>
+                <% sum3=0 %>
+
+                    <% for( let score in scores) { %>
+                        <% sum1=sum1 + scores[score].test_score1 %>
+                            <% sum2=sum2 + scores[score].test_score2 %>
+                                <% sum3=sum3 + scores[score].test_score3 %>
+                                    <% } %>
+                                        <li>
+                                            Avg of Round One : <%= sum1/scores.length %>
+                                        </li>
+                                        <li>
+                                            Avg of Round Two : <%= sum2/scores.length %>
+                                        </li>
+                                        <li>
+                                            Avg of Round Three : <%= sum3/scores.length %>
+                                        </li>
+
+    </ul>
+    <a href="/Candidates">All Candidates</a>
+</body>
+
+</html>

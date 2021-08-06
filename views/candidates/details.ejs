@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= candidate.username %> Details Page
+    </title>
+</head>
+
+<body>
+    <h1>
+        Name : <%= candidate.username %>
+    </h1>
+    <p>
+        Email : <%= candidate.email %>
+    </p>
+    <p>
+    <h2>Marks</h2>
+    <ul>
+        <% for( let marks of candidate.testscores) { %>
+            <li>
+                Round One : <%= marks.test_score1 %>/10
+            </li>
+            <li>
+                Round Two : <%= marks.test_score2 %>/10
+            </li>
+            <li>
+                Round Three : <%= marks.test_score3 %>/10
+            </li>
+
+            <% } %>
+
+    </ul>
+
+    </p>
+
+    <% if(lenValue===0) {%>
+        <p>Add Marks for <b>
+                <%= candidate.username %>
+            </b>.</p>
+        <a href="/candidates/<%= candidate._id %>/testscore/add">Add Marks</a><br>
+        <a href="/candidates">All Candidates</a>
+        <% }else{ %>
+            <a href="/candidates">All Candidates</a>
+            <% } %>
+
+
+</body>
+
+</html>
